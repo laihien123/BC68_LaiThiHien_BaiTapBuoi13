@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Title</title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
+
+        <!-- Bootstrap CSS v5.2.1 -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+            crossorigin="anonymous"
+        />
+        <link rel="stylesheet" href="./style.css">
+    </head>
+
+    <body>
+        <nav>
+            <div class="nav nav-tabs chon" id="nav-tab" role="tablist">
+              <button class="nav-link active" id="nav-bai1-tab" data-bs-toggle="tab" data-bs-target="#nav-bai1" type="button" role="tab" aria-controls="nav-bai1" aria-selected="true">Bài 1</button>
+              <button class="nav-link" id="nav-bai2-tab" data-bs-toggle="tab" data-bs-target="#nav-bai2" type="button" role="tab" aria-controls="nav-bai2" aria-selected="false">Bài 2</button>
+              <button class="nav-link" id="nav-bai3-tab" data-bs-toggle="tab" data-bs-target="#nav-bai3" type="button" role="tab" aria-controls="nav-bai3" aria-selected="false">Bài 3</button>
+              <button class="nav-link" id="nav-bai4-tab" data-bs-toggle="tab" data-bs-target="#nav-bai4" type="button" role="tab" aria-controls="nav-bai4" aria-selected="false" >Bài 4</button>
+              <button class="nav-link" id="nav-bai5-tab" data-bs-toggle="tab" data-bs-target="#nav-bai5" type="button" role="tab" aria-controls="nav-bai5" aria-selected="false" >Bài 5</button>
+            </div>
+          </nav>
+          <div class="tab-content" id="nav-tabContent">
+            <!-- BÀI 1 -->
+            <div class="tab-pane fade show active" id="nav-bai1" role="tabpanel" aria-labelledby="nav-bai1-tab" tabindex="0">
+                <div class="row col-lg-4 offset-4 background_baitap  ">
+                    <h2>Tính tiền lương nhân viên</h2>
+        <div>
+                    <label for="soTien" class="form-label ">Chọn lương mỗi ngày:</label>
+                    <select class="form-select mx-auto " id="soTien" onchange="tinhLuong()">
+                        <option value="100000">100.000đ</option>
+                        <option value="200000">200.000đ</option>
+                        <option value="300000">300.000đ</option>
+                    </select>
+                    <label for="days">Nhập số ngày làm việc:</label>
+                    <input type="number" id="days" name="days" oninput="tinhLuong()" class="form-control  mx-auto" min="0" value="0"></div>
+                    <button onclick="tinhLuong()" class="btn btn-danger w-25 mx-auto mt-3">Tính lương</button>
+                    <p id="result" class="text-center fw-bold">Tổng Lương: 0 VND</p>
+                </div>
+               
+            </div>
+
+            <!-- BÀI 2 -->
+            <div class="tab-pane fade" id="nav-bai2" role="tabpanel" aria-labelledby="nav-bai2-tab" tabindex="0">
+                <div class="row col-lg-4 offset-4 background_baitap">
+                <h2>Tính giá trị trung bình</h2>
+               <div>
+                <input type="number" class="form-control mb-2" id="num1" placeholder="Số thứ 1" required min="0" value="">
+                <input type="number" class="form-control mb-2" id="num2" placeholder="Số thứ 2" required min="0"value="">
+                <input type="number" class="form-control mb-2" id="num3" placeholder="Số thứ 3" required min="0"value="">
+                <input type="number" class="form-control mb-2" id="num4" placeholder="Số thứ 4" required min="0"value="">
+                <input type="number" class="form-control " id="num5" placeholder="Số thứ 5" required min="0" value="">
+            </div>
+                <button onclick="tinhTrungBinh()" class="btn btn-danger w-50 mx-auto mt-3">Tính Trung Bình</button>
+                <p id="result1" class="text-center fw-bold"></p>
+                </div>
+            </div>
+
+            <!-- BÀI 3 -->
+            <div class="tab-pane fade" id="nav-bai3" role="tabpanel" aria-labelledby="nav-bai3-tab" tabindex="0">
+                <div class="row col-lg-4 offset-4 background_baitap">
+                <h2>Quy đổi tiền</h2>
+                <div> 
+                    <label for="soTienUSD" class="form-label">Nhập số tiền USD:  </label>
+                <input  type="number" class="form-control " id="soTienUSD" placeholder="USD" min="0"></div>
+               
+                <button onclick="chuyenDoiTienTe()" class="btn btn-danger w-25 mx-auto mt-3">Chuyển đổi</button>
+                <p class="text-center fw-bold">Kết quả: <span id="result2">0 VND</span></p>
+                </div>
+            </div>
+
+            <!-- BÀI 4 -->
+            <div class="tab-pane fade" id="nav-bai4" role="tabpanel" aria-labelledby="nav-bai4-tab" tabindex="0">
+                <div class="row col-lg-4 offset-4 background_baitap">
+                <h2>Tính diện tích và chu vi hình chữ nhật</h2>
+                <div>
+                <label for="chieuDai" class="form-label">Chiều dài: </label>
+                <input type="number" class="form-control " id="chieuDai" required min="0">
+                <label for="chieuRong" class="form-label">Chiều rộng: </label>
+                <input type="number" class="form-control " id="chieuRong" required min="0"></div>
+                <button onclick="tinhToan()" class="btn btn-danger w-25 mx-auto mt-3">Tính </button>
+                    <div id="result3" class="text-center fw-bold">Kết quả</div>
+                </div>
+            </div>
+
+
+            <!-- BÀI 5 -->
+            <div class="tab-pane fade" id="nav-bai5" role="tabpanel" aria-labelledby="nav-bai5-tab" tabindex="0">
+                <div class="row col-lg-4 offset-4 background_baitap">
+                <h2>Tính tổng 2 chữ số</h2>
+                <div>
+                <input type="number" class="form-control " id="soNhap" placeholder="Nhập số có hai chữ số" min="10"></div>
+                <button onclick="tinhTong()" class="btn btn-danger w-25 mx-auto mt-3">Tính Tổng </button>
+                <p class="text-center fw-bold">Kết quả là: <span id="result4" ></span></p>
+            </div>
+            </div>
+          </div>
+        
+        <script
+            src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+            integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+            crossorigin="anonymous"
+        ></script>
+
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+            integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+            crossorigin="anonymous"
+        ></script>
+        <script src="./index.js">
+
+        </script>
+    </body>
+</html>
